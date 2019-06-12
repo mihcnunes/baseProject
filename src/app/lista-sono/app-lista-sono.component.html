@@ -1,0 +1,28 @@
+
+<ul *ngFor="let person of people">
+    <li>{{person.name}} de {{person.age}} anos precisa dormir. Nível de sono: {{person.level}}</li>
+</ul>
+
+<ul *ngFor="let person of people">
+    <li *ngIf = "person.age == 25">{{person.nome}} de{{person.age}}</li>
+</ul>
+
+<ul *ngFor=" let person of people" >
+    <div [ngSwitch]="person.level">
+            <li *ngSwitchCase="'P'">
+                {{person.name}} está com pouco sono
+            </li>
+            <li *ngSwitchCase="'M'">
+                    {{person.name}} está com  sono
+                </li>
+                <li *ngSwitchCase="'G'">
+                        {{person.name}} está com Muito sono
+                    </li>
+                    <li *ngSwitchDefault>
+                            {{person.name}} está sem sono
+                        </li>
+           
+
+    </div>
+    
+</ul>
